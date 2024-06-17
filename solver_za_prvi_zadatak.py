@@ -30,7 +30,6 @@ def read_bin_file(file_path):
             amount = unpacked_data[4]
             checksum = unpacked_data[5]
             
-            # Verify checksum
             expected_checksum = XOR(data[:-1])
             if checksum != expected_checksum[0]:
                 print(f"Checksum error in record with serial: {serial}")
@@ -43,6 +42,5 @@ def read_bin_file(file_path):
             print(f"Amount: {amount}")
             print(f"Checksum: {checksum}\n")
 
-# Example usage
 file_path = 'data.bin'
 read_bin_file(file_path)
